@@ -13,7 +13,8 @@ class pelisController{
     }
 
     function showPelis(){
-        $this -> pelisView -> muestraPelis($this-> pelisModel->getPelis());
+        $peliculas=$this-> pelisModel->getPelis();
+        var_dump($peliculas);
     }
 
 

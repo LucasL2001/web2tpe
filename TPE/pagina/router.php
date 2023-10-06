@@ -26,7 +26,10 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action);
 
 switch ($params[0]) {
-
+    case 'test':
+        $pelisController=new pelisController();
+        $pelisController->showPelis();
+    break;
     
     default: 
         require_once "./index.php";
