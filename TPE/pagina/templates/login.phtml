@@ -1,0 +1,11 @@
+<section>
+    <form action="router.php" method="post">
+        <input type="text" name="NomubreUser" placeholder="nombre de usuario">
+        <input type="text" name="Password" placeholder="password">
+        <input type="text" name="Password2" placeholder="repita password">
+        <?if($_POST['password'] == $_POST['password2']){?>
+            <div><h4>La contasenia es erronea</h4></div>
+        <?}?>
+        <button></button>
+    </form>
+</section>

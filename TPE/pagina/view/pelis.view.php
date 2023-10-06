@@ -9,6 +9,6 @@ class pelisView{
 
 
     function muestraPelis($objPelis){
-
+        require_once "./TPE/TPE/pagina/templates/muestrapelis.phtml";
     }
 }
