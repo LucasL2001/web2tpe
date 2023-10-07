@@ -8,7 +8,10 @@ class pelisView{
     }
 
 
+    function sideindex(){
+        
+    }
     function muestraPelis($objPelis){
-        require_once "./TPE/TPE/pagina/templates/muestrapelis.phtml";
+        require_once "templates/muestrapelis.phtml";
     }
 }

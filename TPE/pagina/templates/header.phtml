@@ -1,7 +1,9 @@
+<?require_once "model/directores.model.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
 </head>
@@ -9,6 +11,18 @@
     <header>
         <h1>PELISplus</h1>
     </header>
+
+    <nav>
+        <h4>directores reconocidos</h4>
+        <form action="router.php">
+            <ul>
+                <?foreach($objDirector as $objDirectores){?>
+                <li><button type="submit" name="submit"><?$objDirector -> nombre ?> <?$objDirector -> apellido?></button></li>
+                <?}?>
+                
+            </ul>
+        </form>
+    </nav>
 
 
     

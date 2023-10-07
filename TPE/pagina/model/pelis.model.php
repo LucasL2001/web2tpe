@@ -2,7 +2,6 @@
 class pelisModel{
     private $db;
     function __contruct(){
-       
         $this->db = new PDO('mysql:host=localhost;'.'dbname=pelisplus;charset=utf8', 'root', '');
     } 
     

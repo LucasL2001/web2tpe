@@ -1,11 +1,11 @@
-<?include_once './TPE/TPE/pagina/view/pelis.view.php';?>
-<?include_once './TPE/TPE/pagina/templates/header.phtml'?>
+<?include_once 'view/pelis.view.php'?>
+<?include_once 'templates/header.phtml'?>
 <section>
     <ul>
-<?foreach($objPeli as $objPelis){?>
-        <li><?$objPeli -> nombre?> </li>
+        <?foreach($objPeli as $objPelis){?>
+            <li><?$objPeli -> nombre?> </li>
         <?}?>
     </ul>
 </section>
 
-<?include_once './TPE/TPE/pagina/templates/footer.phtml'?>
+<?include_once 'templates/footer.phtml'?>
