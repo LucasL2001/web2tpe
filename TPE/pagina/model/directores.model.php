@@ -17,5 +17,10 @@ class directoresModel{
         var_dump("ERROR!");
         var_dump( $e );
     } 
-}
+    
+    }
+
+
+    
+    
 }

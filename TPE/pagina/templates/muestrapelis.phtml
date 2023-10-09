@@ -1,8 +1,14 @@
-<?include_once 'view/pelis.view.php'?>
-<?include_once 'templates/header.phtml'?>
+
+<?
+include_once 'templates/header.phtml';
+include_once "model/pelis.model.php";
+
+$pelisModel = new pelisModel();
+$objPeli = $pelisModel->getPelis();
+?>
 <section>
     <ul>
-        <?foreach($objPeli as $objPelis){?>
+        <?foreach($objPelis as $objPeli){?>
             <li><?$objPeli -> nombre?> </li>
         <?}?>
     </ul>

@@ -14,7 +14,13 @@ class pelisController{
 
     function showPelis(){
         $peliculas=$this-> pelisModel->getPelis();
-        var_dump($peliculas);
+        $this->pelisView -> muestraPelis($peliculas);
+    }
+
+
+    function showPelisDirector($director){
+        $peliculas=$this-> pelisModel->getDirectorespelis($director);
+        $this->pelisView ->muestraPelis($peliculas);
     }
 
 

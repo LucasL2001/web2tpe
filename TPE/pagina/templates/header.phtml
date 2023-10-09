@@ -1,4 +1,8 @@
-<?require_once "model/directores.model.php"?>
+<?require_once "model/directores.model.php";
+
+$directorsModel = new directoresModel();
+$objDirectors = $directorsModel->getDirectores();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +20,12 @@
         <h4>directores reconocidos</h4>
         <form action="router.php">
             <ul>
-                <?foreach($objDirector as $objDirectores){?>
-                <li><button type="submit" name="submit"><?$objDirector -> nombre ?> <?$objDirector -> apellido?></button></li>
+                <?
+                
+                
+                foreach($objDirectors as $objDirector){
+                    ?>
+                <li><a href="../router.php?action=getdirectorpelis&director=director->id "><?$objDirector -> nombre ?> <?$objDirector -> apellido?></a></li>
                 <?}?>
                 
             </ul>
