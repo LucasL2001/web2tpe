@@ -1,7 +1,7 @@
 <?php
 
-include_once './model/pelis.model.php';
-include_once './view/pelis.view.php';
+include_once 'model/pelis.model.php';
+include_once 'view/pelis.view.php';
 class pelisController{
     private $pelisModel;
     private $pelisView;
@@ -14,7 +14,13 @@ class pelisController{
 
     function showPelis(){
         $peliculas=$this-> pelisModel->getPelis();
-        var_dump($peliculas);
+        $this->pelisView -> muestraPelis($peliculas);
+    }
+
+
+    function showPelisDirector($director){
+        $peliculas=$this-> pelisModel->getDirectorespelis($director);
+        $this->pelisView ->muestraPelis($peliculas);
     }
 
 
