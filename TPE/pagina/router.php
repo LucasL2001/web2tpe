@@ -32,6 +32,6 @@ switch ($params[0]) {
     break;
     
     default: 
-        require_once "./index.php";
+        echo('404');
         break;
 }

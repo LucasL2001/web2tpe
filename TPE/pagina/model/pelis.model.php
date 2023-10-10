@@ -1,9 +1,10 @@
 <?php
 class pelisModel{
     private $db;
-    function __contruct(){
+    function __construct(){
        
         $this->db = new PDO('mysql:host=localhost;'.'dbname=pelisplus;charset=utf8', 'root', '');
+        
     } 
     
     function getPelis(){
@@ -12,7 +13,13 @@ class pelisModel{
              $sentencia = $this->db->prepare('SELECT * FROM peliculas');
         $sentencia->execute();
         $peliculas = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        var_dump($peliculas);
+        foreach($peliculas as $pelis){
+            $query =$db->prepare('SELECT * FROM directores');
+            $query->execute();
+            $peliculas = $query->fetchAll(PDO::FETCH_OBJ);
+            var_dump($peliculas);
+
+     }
         
     }
     catch ( PDOException $e ) {
@@ -20,5 +27,6 @@ class pelisModel{
         var_dump( $e );
     } 
 }
-    
+   
+
 } 
