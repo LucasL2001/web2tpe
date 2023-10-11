@@ -2,7 +2,8 @@
 
 class directoresModel{
     private $db;
-    function __contruct(){
+
+    function __construct(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=pelisplus;charset=utf8', 'root', '');
     } 
     

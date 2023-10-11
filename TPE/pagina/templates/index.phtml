@@ -1,0 +1,18 @@
+<?php
+    require_once "header.phtml";
+?>
+    <nav>
+        <h4>directores reconocidos</h4>
+        <form action="router.php">
+            <ul>
+                <?php foreach($directores as $director){ ?>
+                <li><a href="../router.php?action=getdirectorpelis&director=$director['ID']"><?php echo( $director->Nombre) ?> <?php echo( $director->Apellido) ?></a></li>
+                <?php }?>
+                
+            </ul>
+        </form>
+    </nav>    
+
+<?php 
+    require_once "footer.phtml";
+?>

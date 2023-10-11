@@ -1,17 +1,19 @@
 
-<?
-include_once 'templates/header.phtml';
-include_once "model/pelis.model.php";
-
-$pelisModel = new pelisModel();
-$objPeli = $pelisModel->getPelis();
+<?php
+require_once 'templates/header.phtml';
 ?>
+
+
 <section>
     <ul>
-        <?foreach($objPelis as $objPeli){?>
-            <li><?$objPeli -> nombre?> </li>
-        <?}?>
+        <?php foreach($peliculas as $pelicula){?>
+            <li>
+            <a href="router.php?action=verPelicula&id=<?php echo $pelicula ->ID; ?>">Ver detalles</a>
+            </li>
+        <?php }?>
     </ul>
 </section>
 
-<?include_once 'templates/footer.phtml'?>
+<?php
+require_once 'templates/footer.phtml';
+?>

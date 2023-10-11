@@ -9,7 +9,7 @@ class directoresView{
     }
 
 
-    function muestraDirectors($objdirector){
-        require_once "templates/header.phtml";
+    function muestraDirectors($directores){
+        include "templates/index.phtml";
     }
 }

@@ -1,15 +1,25 @@
 <?php
 require_once "model/directores.model.php";
-require_once "view/directores.view.php";
+require_once "view/director.view.php";
+class DirectorController{
 
-class directorController{
-    private $model = new directoresModel();
-    private $view = new directoresView();
+    private  $model;
+    private $view;
 
     function __construct()
     {
-        
+        $this->model = new directoresModel();
+        $this->view = new directoresView();
     }
 
 
+    function showdirectors(){
+        $directores = $this-> model->getDirectores();
+        $this->view -> muestraDirectors($directores);
+    }
+
 }
+
+
+
+
