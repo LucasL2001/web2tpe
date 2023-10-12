@@ -14,4 +14,8 @@ class pelisView{
     function muestraPelis($peliculas){
         require  "templates/muestrapelis.phtml";
     }
+
+    function muestrainfopelis($info){
+        require 'templates/muestrainfopelis.phtml';
+    }
 }

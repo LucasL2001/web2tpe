@@ -18,6 +18,11 @@ class pelisController{
     }
 
 
+    function showPelisInfo($id){
+        $pelisInfo = $this -> pelisModel-> Showpelis($id);
+        $this -> pelisView -> muestrainfopelis($pelisInfo);
+    }
+
     function showPelisDirector($director){
         $peliculas=$this-> pelisModel->getDirectorespelis($director);
         $this->pelisView ->muestraPelis($peliculas);

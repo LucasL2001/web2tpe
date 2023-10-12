@@ -8,7 +8,7 @@ require_once 'templates/header.phtml';
     <ul>
         <?php foreach($peliculas as $pelicula){?>
             <li>
-            <a href="router.php?action=verPelicula&id=<?php echo $pelicula ->ID; ?>">Ver detalles</a>
+            <a href="../router.php?action=getinfopelis&id=<?php echo $pelicula ->ID ?>"><?php echo($pelicula ->Nombre)?></a>
             </li>
         <?php }?>
     </ul>

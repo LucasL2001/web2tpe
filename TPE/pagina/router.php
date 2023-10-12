@@ -18,21 +18,23 @@ $directorController = new DirectorController();
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'index';
+    $action = 'getpelis';
 }
 
-
+var_dump($action);
 
 $params = explode('/', $action);
 switch ($params[0]) {
     case "index":
         $directorController -> showdirectors();
     break;
-        $pelisController->showPelis();
-    break;
+
     case 'getpelis':
         $pelisController->showPelis();
     break;
+
+    case 'getingopelis':
+        $pelisController->showPelisInfo($id);
 
     case "getdirectorpelis":  
     $pelisController ->showPelis($director);

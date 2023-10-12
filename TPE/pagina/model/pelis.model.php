@@ -14,7 +14,16 @@ class pelisModel{
         $peliculas = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $peliculas;
     }
+    function Showpelis($id){
+    
+        $query = $this->db -> prepare("SELECT FROM peliculas WHERE ID = $id");
         
+        $query -> execute();
+    
+        $info= $query ->fetchAll(PDO::FETCH_OBJ);
+    
+        return $info;
+    }
     
     function getDirectorespelis($director){
         try{
