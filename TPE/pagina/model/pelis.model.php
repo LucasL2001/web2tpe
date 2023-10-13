@@ -1,8 +1,9 @@
 <?php
 class pelisModel{
+    private $db;
 
     function __contructs(){
-        
+        $this->db = new PDO('mysql:host=localhost;dbname=pelisplus;charset=utf8', 'root', '');
         
     } 
     
@@ -26,8 +27,7 @@ class pelisModel{
     
     function getDirectorespelis($director){
         try{
-            $db = new PDO('mysql:host=localhost;dbname=pelisplus;charset=tuf8', 'root', '');
-            $sentencia = $db->prepare("SELECT FROM peliculas WHERE Direcor = $director");
+            $sentencia = $this->db->prepare("SELECT FROM peliculas WHERE Direcor = $director");
             $sentencia -> execute();
             $pelis = $sentencia->fetchAll(PDO::FETCH_OBJ);
             return $pelis;
