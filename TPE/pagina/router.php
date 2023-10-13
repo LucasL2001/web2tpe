@@ -22,7 +22,7 @@ if (!empty($_GET['action'])) {
 }
 
 var_dump($action);
-
+$id= 6;
 $params = explode('/', $action);
 switch ($params[0]) {
     case "index":
