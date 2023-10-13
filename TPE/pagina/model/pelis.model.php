@@ -27,7 +27,7 @@ class pelisModel{
     
     function getDirectorespelis($director){
         try{
-            $sentencia = $this->db->prepare("SELECT FROM peliculas WHERE direcor = $director");
+            $sentencia = $this->db->prepare("SELECT FROM peliculas WHERE Direcor = $director");
             $sentencia -> execute();
             $pelis = $sentencia->fetchAll(PDO::FETCH_OBJ);
             return $pelis;

@@ -20,6 +20,7 @@ class pelisController{
 
     function showPelisInfo($id){
         $pelisInfo = $this -> pelisModel-> Showpelis($id);
+        var_dump("$pelisInfo");
         $this -> pelisView -> muestrainfopelis($pelisInfo);
     }
 

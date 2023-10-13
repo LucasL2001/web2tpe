@@ -33,11 +33,11 @@ switch ($params[0]) {
         $pelisController->showPelis();
     break;
 
-    case 'getingopelis':
+    case 'getinfopelis':
         $pelisController->showPelisInfo($id);
 
     case "getdirectorpelis":  
-    $pelisController ->showPelis($director);
+        $pelisController ->showPelis($director);
     break;
     
     default: 

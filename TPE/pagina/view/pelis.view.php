@@ -11,6 +11,7 @@ class pelisView{
     function sideindex(){
         
     }
+
     function muestraPelis($peliculas){
         require  "templates/muestrapelis.phtml";
     }
