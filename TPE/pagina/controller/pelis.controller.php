@@ -17,7 +17,10 @@ class pelisController{
         $this->pelisView -> muestraPelis($peliculas);
     }
 
-
+    function getOnePelicula($idPelicula){
+        $pelicula=$this->pelisModel->conseguirUnaPelicula($idPelicula);
+        $this->pelisView->muestraDetallesDePelicula($pelicula);
+    }
     function showPelisInfo($id){
         $pelisInfo = $this -> pelisModel-> Showpelis($id);
         $this -> pelisView -> muestrainfopelis($pelisInfo);

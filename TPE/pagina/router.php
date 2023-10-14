@@ -18,27 +18,28 @@ $directorController = new DirectorController();
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'getpelis';
+    $action = 'home';
 }
 
 var_dump($action);
 
 $params = explode('/', $action);
 switch ($params[0]) {
-    case "index":
-        $directorController -> showdirectors();
-    break;
-
-    case 'getpelis':
+    case "home":
         $pelisController->showPelis();
+        $directorController -> showdirectors();     
     break;
-
-    case 'getingopelis':
+    case "detallesPeli":/*["detallesPeli/", $id]  */
+        $id = $params[1];
+        $pelisController->getOnePelicula($id);
+        echo "<p>Estoy en la ruta de detalles de peliculas</p>";
+        break;
+/*     case 'getingopelis':
         $pelisController->showPelisInfo($id);
-
+   
     case "getdirectorpelis":  
     $pelisController ->showPelis($director);
-    break;
+    break; */
     
     default: 
         echo('404');
