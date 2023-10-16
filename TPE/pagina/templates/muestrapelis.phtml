@@ -9,7 +9,7 @@ require_once 'templates/header.phtml';
         <?php foreach($peliculas as $pelicula){?>
             <li>
            
-                <a href="detallesPeli/<?php $pelicula->ID?>"><?=$pelicula->Nombre?></a>
+                <a href="detallesPeli/<?=$pelicula->ID?>"><?=$pelicula->Nombre?></a>
 
             </li>
         <?php }?>

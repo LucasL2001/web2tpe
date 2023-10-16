@@ -1,14 +1,12 @@
 <section>
-
-        <?php foreach($pelicula as $peli){
-            ?>
-         
-           
-                <p><?=$pelicula->Nombre?></p>
-                <p><?=$pelicula->Descripcion?></p>
-          
-        <?php }?>
-   
+    <h1>Detalle de la pelicula</h1>
+    <?php if ($pelicula) { ?>
+        <p>Nombre: <?= $pelicula->Nombre ?></p>
+        <p>Descripcion: <?= $pelicula->Descripcion ?></p>
+        <p>Genero: <?= $pelicula->Genero ?></p>
+        <p>Clasificacion: <?= $pelicula->Clasificacion_edad ?></p>
+        <p>Nombre del director: <?= $pelicula->Director ?></p>
+    <?php } else { ?>
+        <p>La película no se encontró o no existe.</p>
+    <?php } ?>
 </section>
-
-
