@@ -10,6 +10,10 @@ class directoresView{
 
 
     function muestraDirectors($directores){
-        include "templates/index.phtml";
+        include "templates/directores.phtml";
+    }
+
+    function muestraPeliculasDeEseDirector($peliculasDeEseDirector){
+        
     }
 }

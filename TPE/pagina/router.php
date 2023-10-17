@@ -8,6 +8,7 @@ require_once 'controller/director.controller.php';
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 //inicio las clases
+//que opinas de instanciar los controladores dentro de los casos del switch piraaa
 $pelisController=new pelisController();
 $directorController = new DirectorController();
 
@@ -33,7 +34,10 @@ switch ($params[0]) {
         $id = $params[1];
         $pelisController->getOnePelicula($id);
         
-        break;
+    break;
+    case "peliculasDeEstosDirectores":
+        $id = $params[1];
+        $directorController -> conseguirPeliculasConEseDirector($id);
 /*     case 'getingopelis':
         $pelisController->showPelisInfo($id);
    

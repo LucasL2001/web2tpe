@@ -6,8 +6,9 @@
         <form action="router.php">
             <ul>
                 <?php foreach($directores as $director){ ?>
-                <li><a href="../router.php?action=getdirectorpelis&director=$director['ID']"><?php echo( $director->Nombre) ?> <?php echo( $director->Apellido) ?></a></li>
-                <?php }?>
+                    <li><a href="peliculasDeEstosDirectores/<?=$director->id_director?>"><?= $director->Director ?>, <?= $director->Apellido ?></a></li>
+                    
+                <?php }?>   
                 
             </ul>
         </form>

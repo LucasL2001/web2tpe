@@ -17,6 +17,10 @@ class DirectorController{
         $directores = $this-> model->getDirectores();
         $this->view -> muestraDirectors($directores);
     }
+    function conseguirPeliculasConEseDirector($id){
+        $peliculasConEsteDirector = $this-> model->conseguirPeliculasConEseDirectorDb($id);
+        $this->view->muestraPeliculasDeEseDirector($peliculasConEsteDirector);
+    }
 
 }
 

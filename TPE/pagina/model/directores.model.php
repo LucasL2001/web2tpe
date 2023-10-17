@@ -20,7 +20,17 @@ class directoresModel{
     } 
     
     }
-
+    function conseguirPeliculasConEseDirectorDb($id){
+        $sentencia = $this->db->prepare('SELECT * FROM directores WHERE id_director = ?');
+        $sentencia -> execute(array($id));
+        $director = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        foreach ($director as $pelicula) {
+            $sentencia = $this->db->prepare('SELECT * FROM peliculas WHERE id_director = ?');
+            $sentencia->execute(array($pelicula->id_director));
+            $director = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        }
+        return $director;
+    }
 
     
     
