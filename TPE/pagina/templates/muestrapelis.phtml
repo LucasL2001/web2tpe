@@ -1,10 +1,10 @@
-
-<?php
-require_once 'templates/header.phtml';
-?>
+<?php require_once "templates/head.phtml";?>
+<?php require_once "templates/header.phtml";?>
 
 
 <section>
+
+    <h2>Lista de peliculas</h2>
     <ul>
         <?php foreach($peliculas as $pelicula){?>
             <li>
@@ -15,7 +15,3 @@ require_once 'templates/header.phtml';
         <?php }?>
     </ul>
 </section>
-
-<?php
-require_once 'templates/footer.phtml';
-?>

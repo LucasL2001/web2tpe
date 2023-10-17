@@ -1,8 +1,7 @@
-<?php
-    require_once "header.phtml";
-?>
+<?php require_once "templates/head.phtml";?>
+
     <nav>
-        <h4>directores reconocidos</h4>
+        <h2>directores reconocidos</h2>
         <form action="router.php">
             <ul>
                 <?php foreach($directores as $director){ ?>
@@ -14,6 +13,3 @@
         </form>
     </nav>    
 
-<?php 
-    require_once "footer.phtml";
-?>
