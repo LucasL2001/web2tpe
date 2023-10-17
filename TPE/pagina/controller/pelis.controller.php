@@ -32,5 +32,7 @@ class pelisController{
     }
 
 
+    //utilizar el helper para el ABM desde aca
+
 
 }

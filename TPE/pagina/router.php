@@ -11,7 +11,7 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
 //que opinas de instanciar los controladores dentro de los casos del switch piraaa
 $pelisController=new pelisController();
 $directorController = new DirectorController();
-
+$authController = new authController();
 
 //accion por defecto
 
@@ -23,7 +23,7 @@ if (!empty($_GET['action'])) {
 }
 
 
-$id= 6;
+
 $params = explode('/', $action);
 switch ($params[0]) {
     case "home":
@@ -38,16 +38,13 @@ switch ($params[0]) {
     case "peliculasDeEstosDirectores":
         $id = $params[1];
         $directorController -> conseguirPeliculasConEseDirector($id);
-/*     case 'getingopelis':
-        $pelisController->showPelisInfo($id);
-   
-    case "getdirectorpelis":  
-    $pelisController ->showPelis($director);
-    break; */
-    
+
+        break;
+    case "login":
+        $authController->mostrarForm();
+        break;
     default: 
         echo('404');
 
-    require_once "templates/login.phtml";
     break;
 }

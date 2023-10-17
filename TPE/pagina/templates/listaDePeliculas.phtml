@@ -1,0 +1,19 @@
+<?php
+require_once 'templates/header.phtml';
+?>
+
+<section>
+    <ul>
+        <?php foreach($peliculasDeEseDirector as $pelicula){?>
+            <li>
+           
+                <h1><?=$pelicula->Nombre?></h1>
+                <p>Descripcion: <?= $pelicula->Descripcion ?></p>
+                <p>Genero: <?= $pelicula->Genero ?></p>
+                <p>Clasificacion: <?= $pelicula->Clasificacion_edad ?></p>
+                <p>Nombre del director: <?= $pelicula->Director ?></p>
+
+            </li>
+        <?php }?>
+    </ul>
+</section>

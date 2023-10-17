@@ -14,6 +14,6 @@ class directoresView{
     }
 
     function muestraPeliculasDeEseDirector($peliculasDeEseDirector){
-        
+        include "templates/listaDePeliculas.phtml";
     }
 }
