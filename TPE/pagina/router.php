@@ -9,9 +9,8 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
 
 //inicio las clases
 //que opinas de instanciar los controladores dentro de los casos del switch piraaa
-$pelisController=new pelisController();
-$directorController = new DirectorController();
-$authController = new authController();
+
+
 
 //accion por defecto
 
@@ -27,24 +26,39 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action);
 switch ($params[0]) {
     case "home":
+        $pelisController=new pelisController();
+        $directorController = new DirectorController();
         $pelisController->showPelis();
         $directorController -> showdirectors();     
     break;
     case "detallesPeli":/*["detallesPeli/", $id]  */
+        $pelisController=new pelisController();
         $id = $params[1];
         $pelisController->getOnePelicula($id);
         
     break;
     case "peliculasDeEstosDirectores":
+        $directorController = new DirectorController();
         $id = $params[1];
         $directorController -> conseguirPeliculasConEseDirector($id);
 
         break;
     case "login":
+        $authController = new authController();
         $authController->mostrarForm();
+        break;
+
+    case "validacion":
+        $authController = new authController();
+        $authController->validacionDeUsuario();
+
+        break;
+    case "logout":
+        $authController = new authController();
+        $authController->logout();
         break;
     default: 
         echo('404');
 
-    break;
+        break;
 }

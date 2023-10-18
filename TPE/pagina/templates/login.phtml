@@ -2,18 +2,20 @@
 <?php require_once "templates/header.phtml";?>
 
 <section>
-    <form action="router.php" method="post">
-        <input type="text" name="NomubreUser" placeholder="nombre de usuario">
-        <input type="text" name="Password" placeholder="password">
+    <form method="POST" action="validacion">
+        <input type="text" name="usuario" placeholder="nombre de usuario">
+        <input type="text" name="contrasenia" placeholder="password">
        
         
-        <button type="submit" name="submit">Login</button>
         
-        <button type="submit" name="submit">USER CASUAL</button>
-        
-      
-    </form>
-
+        <?php if ($error) { ?>
+            <div class="alert alert-danger mt-3">
+                <?php echo $error; ?>
+                
+            </div>
+            <?php }?>
+            <button type="submit" >Login</button>
+        </form>
 </section>
 
 <?php require_once "templates/footer.phtml"?>

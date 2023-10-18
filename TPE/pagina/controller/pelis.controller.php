@@ -2,12 +2,16 @@
 
 include_once 'model/pelis.model.php';
 include_once 'view/pelis.view.php';
+include_once 'helpers/authHelper.php';
+
+
 class pelisController{
     private $pelisModel;
     private $pelisView;
 
     function __construct()
     {
+
         $this->pelisModel = new pelisModel();
         $this->pelisView = new pelisView();
     }
