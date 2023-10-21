@@ -10,9 +10,9 @@ class usuarioModel{
     function conseguirUsuarioPorNombreDeUsuario($usuario){
         $sentencia = $this->db->prepare('SELECT * FROM usuarios WHERE Nombre = ?');
         $sentencia->execute(array($usuario));
-        $usuarioo = $sentencia->fetch(PDO::FETCH_OBJ);
+        $usuariologin = $sentencia->fetch(PDO::FETCH_OBJ);
         
-        return $usuarioo;
+        return $usuariologin;
     }
     
    

@@ -7,14 +7,14 @@ class pelisModel{
         
     } 
     
-    function getPelis(){
+    function getPeliculas(){
 
         $sentencia = $this->db->prepare('SELECT * FROM peliculas');
         $sentencia->execute();
         $peliculas = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $peliculas;
     }
-    function Showpelis($id){
+    function getPelicula($id){
         $db = new PDO('mysql:host=localhost;dbname=pelisplus;charset=tuf8', 'root', '');
         $query = $db -> prepare("SELECT FROM peliculas WHERE ID = $id");
         
@@ -24,6 +24,7 @@ class pelisModel{
     
         return $info;
     }
+    
     function conseguirUnaPelicula($id) {
         $sentencia = $this->db->prepare('SELECT peliculas.*, directores.Director 
             FROM peliculas 
