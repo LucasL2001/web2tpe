@@ -33,5 +33,22 @@ class directoresModel{
     }
 
     
-    
+    function addPelicula($director, $apellido, $edad, $premios, $mayorexito){
+        $sentencia = $this-> db->prepare(" INSERT INTO directores(Director =?, Apellido=?, Edad=?, Premios=?, MayorExito=?) VALUES (?,?,?,?,?) ");
+        $sentencia->execute(array($director, $apellido, $edad, $premios, $mayorexito));
+
+    }
+
+
+    function delete($id){
+        $query = $this->db->prepare('DELETE FROM directores WHERE id =?');
+        $query->execute(array($id));
+    }
+
+
+    function update($director, $apellido, $edad, $premios, $mayorexito, $id){
+        $query = $this->db->prepare('UPDATE director SET Director =?, Apellido=?, Edad=?, Premios=?, MayorExito=? WHERE id =?');
+        $query->execute(array($director, $apellido, $edad, $premios, $mayorexito, $id));
+
+    }
 }

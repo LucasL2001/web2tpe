@@ -49,4 +49,23 @@ class pelisModel{
         } 
     } 
 
+    function addPelicula($nombre, $descripcion, $genero, $clasificacion_edad, $director, $ID_director){
+        $sentencia = $this-> db->prepare(" INSERT INTO `peliculas`(`Nombre`, `Descripcion`, `Genero`, `Clasificacion_edad`, `Director`, `id_director`) VALUES (?,?,?,?,?,?) ");
+        $sentencia->execute(array($nombre, $descripcion, $genero, $clasificacion_edad, $director, $ID_director));
+
+    }
+
+
+    function delete($id){
+        $query = $this->db->prepare('DELETE FROM peliculas WHERE id =?');
+        $query->execute(array($id));
+    }
+
+
+    function update($nombre, $descripcion, $genero, $clasificacion_edad, $director, $ID_director, $id){
+        $query = $this->db->prepare('UPDATE peliculas SET Nombre = ?, Descripcion=?, Genero=?, Clasificacion_edad=?, Director=?, id_director=? WHERE id =?');
+        $query->execute(array($nombre, $descripcion, $genero, $clasificacion_edad, $director, $ID_director, $id));
+
+    }
+
 }

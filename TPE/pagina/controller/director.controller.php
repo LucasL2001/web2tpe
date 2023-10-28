@@ -1,7 +1,6 @@
 <?php
 require_once "model/directores.model.php";
 require_once "view/director.view.php";
-
 include_once 'helpers/authHelper.php';
 
 class DirectorController{
