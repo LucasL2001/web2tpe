@@ -38,6 +38,13 @@ class pelisController{
 
 
     //utilizar el helper para el ABM desde aca
+    function deletePelicula($ID){
+        $this->pelisModel ->delete($ID);
+    }
 
+
+    function updatePelicula($nombre, $descripcion, $genero, $clasificacion_edad, $director, $ID_director, $id){
+
+    }
 
 }

@@ -25,11 +25,11 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $action);
 switch ($params[0]) {
-    case "home":
+    case "home"://// muestra todas las peliculas
         $pelisController->showPelis();
     break;
 
-    case "directores":
+    case "directores"://// muestra los directores
         $directorController -> showdirectors();
         break;
 
@@ -38,25 +38,29 @@ switch ($params[0]) {
         $pelisController->getOnePelicula($id);
     break;
 
-    case "peliculasDeEstosDirectores":
+    case "peliculasDeEstosDirectores":////trae y muestra las peliculas de un director en espesifico
         $id = $params[1];
         $directorController -> conseguirPeliculasConEseDirector($id);
         break;
-    case "login":
-
+    
+    case "eliminapelicula":////delete peliculas
+        $ID= $_POST['eliminar'];
+        $pelisController->deletePelicula($ID);
+        break;
+    
+    case "login":////muestra el login
         $authController->mostrarForm();
         break;
 
-    case "validacion":
+    case "validacion":////valida el usuario
         $authController->validacionDeUsuario();
         break;
 
-    case "logout":
+    case "logout"://// desloguea el user
         $authController->logout();
         break;
     
     default: 
         echo('es defaul');
-
         break;
 }
