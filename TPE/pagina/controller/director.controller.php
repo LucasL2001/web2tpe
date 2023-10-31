@@ -4,14 +4,14 @@ require_once "view/director.view.php";
 include_once 'helpers/authHelper.php';
 
 class DirectorController{
-
+    private $auth;
     private  $model;
     private $view;
 
     function __construct()
     {
-
-        $this->model = new directoresModel();
+        $this-> auth= new authHelper();
+        $this->model = new directoresModel();  
         $this->view = new directoresView();
     }
 

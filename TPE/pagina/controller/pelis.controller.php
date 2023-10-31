@@ -6,19 +6,20 @@ include_once 'helpers/authHelper.php';
 
 
 class pelisController{
+    private $auth;
     private $pelisModel;
     private $pelisView;
 
     function __construct()
     {
-
+        $this-> auth= new authHelper();
         $this->pelisModel = new pelisModel();
         $this->pelisView = new pelisView();
     }
 
     function showPelis(){
-        $peliculas=$this-> pelisModel->getPeliculas();
-        $this->pelisView -> muestraPelis($peliculas);
+        $peliculas=$this->pelisModel->getPeliculas();
+        $this->pelisView->muestraPelis($peliculas);
     }
 
     function getOnePelicula($idPelicula){

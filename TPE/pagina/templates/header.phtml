@@ -4,15 +4,16 @@
     <nav>
         <form action="router.php">
             <ul>
-            <?php echo($_SESSION['USER_ID'])?>
-                <?php if (!isset($_SESSION['USER_ID'])) : ?>
+            
+                <?php if (empty($_SESSION["USER_ID"])) { ?>
                     <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="login">Login</a>
                     </li>
-                <?php else : ?>
+                <?php }else { ?>
                     <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="logout">Logout (<?php echo $_SESSION['USER_NAME'] ?>)</a>
-                <?php endif; ?>
+                    <?php var_dump($_SESSION["USER_ID"]) ?>
+                    <?php }; ?>
                     </li>
                 <li>
                     <a href="directores">Directores</a>

@@ -20,17 +20,30 @@ class authController{
 
 
     function validacionDeUsuario(){
-        $usuario = $_POST['usuario'];
-        $contrasenia = $_POST['contrasenia'];
+        $usuario = $_GET['usuario'];
+        $contrasenia = $_GET['contrasenia'];
         $usuariologin = $this->model->conseguirUsuarioPorNombreDeUsuario($usuario); 
-
+        var_dump($usuariologin);
         if (isset($usuariologin) && !empty($usuariologin)) {
             if(password_verify($contrasenia, $usuariologin->clave)){            
-                session_start();
+                
+
+
+                
+                    if (session_status() != PHP_SESSION_ACTIVE) {
+                        session_start();
+                    }
+                
+            
+                
+                
+                
+                
                 $_SESSION["USER_ID"] = $usuariologin->ID;
-                $_SESSION["USER_NAME"] = $usuariologin->nombre;
+                $_SESSION["USER_NAME"] = $usuariologin->Nombre;
+                var_dump($_SESSION["USER_NAME"]);
                 $_SESSION["IS_LOGGED"] = true;
-                header("Location: " . BASE_URL);
+                header("Location: " . BASE_URL. "home");
             }else{
                 $this->view->mostrarForm("la contraseña no es valida");
             }

@@ -9,6 +9,11 @@
         <?php foreach($peliculas as $pelicula){?>
             <li>
                 <a href="detallesPelicula/<?=$pelicula->ID?>"><?=$pelicula->Nombre?></a> 
+                <?php if(isset($_SESSION["IS_LOGGED"]) && $_SESSION["IS_LOGGED"] == true){?>
+                    <form action="router.php">
+                        
+                    </form>
+                <?php }?>
             </li>
         <?php }?>
     </ul>
