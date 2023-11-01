@@ -47,7 +47,43 @@ switch ($params[0]) {
         $ID= $_POST['eliminar'];
         $pelisController->deletePelicula($ID);
         break;
+
+    case "eliminadirector":////eliminaDirector
+        $ID= $_POST['eliminar'];
+        $DirectorController->deleteDirector($ID);
+        break;
     
+    case "editarpelicula": ////muestra update pelicula
+        $id=$_POST['ID'];
+        $pelisController-> mostrarUpdate($id);
+        break;
+        
+    case "updatePelicula":////update pelicula
+        $nombre = $_POST["nombre"];
+        $descripcion = $_POST["descripcion"];
+        $genero= $_POST["genero"];
+        $edad = $_POST["edad"];
+        $id_director= $_POST["id_director"];
+        $id = $_POST["id"];
+        $pelisController->updatePelicula($nombre, $descripcion,$genero, $edad,$id_director,$id);
+        break;
+            
+            
+    case "editardirector": ////mustra updateDirectores
+        $id=$_POST['ID'];
+        $directorController-> mostrarUpdate($id);
+        break;
+
+    case "updateDirectores":////update director
+        $director = $_POST["director"];
+        $apellido = $_POST["apellido"];
+        $edad= $_POST["edad"];
+        $premios = $_POST["premios"];
+        $exito= $_POST["mayorExito"];
+        $id = $_POST["id"];
+        $directorController->updateDirector($director, $apellido,$edad, $premios,$exitos,$id);
+    break;
+
     case "login":////muestra el login
         $authController->mostrarForm();
         break;

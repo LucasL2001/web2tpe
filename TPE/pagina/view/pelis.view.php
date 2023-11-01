@@ -22,4 +22,9 @@ class pelisView{
     function muestraDetallesDePelicula($pelicula){
         require 'templates/detallePelicula.phtml';
     }
+
+
+    function mostrarUpdate($id){
+        include_once "template/updatePelicula.phtml";
+    }
 }

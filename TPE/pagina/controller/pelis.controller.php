@@ -43,26 +43,22 @@ class pelisController{
     }
 
 
-    function updatePelicula($nombre, $descripcion, $genero, $clasificacion_edad, $nombreDirector, $id){
+    function updatePelicula($nombre, $descripcion, $genero, $clasificacion_edad, $ID_director, $id){
 
-        
-        if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)&&!empty($nombreDirector)){
-            
-            
-            $pelisList = $this->pelisModel -> getPeliculas();
-            foreach($pelisList as $p){  
-                if($p->Director == $nombreDirector){
-                    
-                }
-            }
-            
-            
-            
-            
-            
-            
-            $this-> pelisModel -> update($nombre, $descripcion, $genero, $clasificacion_edad,0, $ID_director, $id);
+    if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)&&!empty($ID_director)){
+        $this-> pelisModel -> update($nombre, $descripcion, $genero, $clasificacion_edad,0, $ID_director, $id);
         }
+    }
+
+    function addPelicula($nombre, $descripcion, $genero, $clasificacion_edad, $ID_director, $id){
+        if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)&&!empty($ID_director)){
+            $this-> pelisModel -> addPelicula($nombre, $descripcion, $genero, $clasificacion_edad,0, $ID_director, $id);
+            }
+    }
+
+
+    function mostrarUpdate($id){
+        $this->pelisView-> mostrarUpdate($id);
     }
 
 }

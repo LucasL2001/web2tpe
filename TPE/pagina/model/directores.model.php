@@ -33,7 +33,7 @@ class directoresModel{
     }
 
     
-    function addPelicula($director, $apellido, $edad, $premios, $mayorexito){
+    function addDirector($director, $apellido, $edad, $premios, $mayorexito){
         $sentencia = $this-> db->prepare(" INSERT INTO directores(Director =?, Apellido=?, Edad=?, Premios=?, MayorExito=?) VALUES (?,?,?,?,?) ");
         $sentencia->execute(array($director, $apellido, $edad, $premios, $mayorexito));
 

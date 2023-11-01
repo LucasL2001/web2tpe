@@ -1,0 +1,13 @@
+<?php require_once "templates/head.phtml";?>
+
+<?php
+require_once 'templates/header.phtml';
+?>
+<form action="updatePelicula" method="post">
+    <input type="text" name="director" placeholder="director nuevo">
+    <input type="text" name="apellido" placeholder="apellido nuevo">
+    <input type="number" name="edad" placeholder="edad nueva">
+    <input type="number" name="premios" placeholder="premios nuevo">
+    <input type="numbre" name="mayorExito" placeholder="mayoerExito nueva">
+    <button type="submit" name = "id" href="<?php $id ?>">ADD</button>
+</form>

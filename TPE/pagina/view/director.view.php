@@ -16,4 +16,9 @@ class directoresView{
     function muestraPeliculasDeEseDirector($peliculasDeEseDirector){
         include "templates/listaDePeliculas.phtml";
     }
+
+
+    function mostrarUpdate($id){
+        include_once "templates/updateDirector";
+    }
 }
