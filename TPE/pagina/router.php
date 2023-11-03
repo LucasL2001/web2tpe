@@ -59,12 +59,13 @@ switch ($params[0]) {
         break;
         
     case "updatePelicula":////update pelicula
+        $id = $params[1];
         $nombre = $_POST["nombre"];
         $descripcion = $_POST["descripcion"];
         $genero= $_POST["genero"];
         $edad = $_POST["edad"];
         $id_director= $_POST["id_director"];
-        $id = $params[1];
+        var_dump($id);
         $pelisController->updatePelicula($nombre, $descripcion,$genero, $edad,$id_director,$id);
         break;
             

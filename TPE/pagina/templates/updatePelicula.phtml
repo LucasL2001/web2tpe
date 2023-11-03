@@ -3,11 +3,11 @@
 <?php
 require_once 'templates/header.phtml';
 ?>
-<form action="updatePelicula" method="post">
+<form action="updatePelicula/<?= $id ?>" method="POST">
     <input type="text" name="nombre" placeholder="nombre nuevo">
     <input type="text" name="descripcion" placeholder="descripcion nuevo">
     <input type="text" name="genero" placeholder="genero nuevo">
     <input type="number" name="edad" placeholder="clasificacion de edad nueva">
     <input type="numbre" name="id_director" placeholder="id del director nueva">
-    <button type="submit" name="id" >ADD</button>
+    <button type="submit" >ADD</button>
 </form>
