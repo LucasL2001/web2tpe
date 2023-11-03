@@ -25,6 +25,6 @@ class pelisView{
 
 
     function mostrarUpdate($id){
-        include_once "template/updatePelicula.phtml";
+        include_once "templates/updatePelicula.phtml";
     }
 }

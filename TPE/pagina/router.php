@@ -44,17 +44,17 @@ switch ($params[0]) {
         break;
     
     case "eliminapelicula":////delete peliculas
-        $ID= $_POST['eliminar'];
-        $pelisController->deletePelicula($ID);
+        $id = $params[1];
+        $pelisController->deletePelicula($id);
         break;
 
     case "eliminadirector":////eliminaDirector
-        $ID= $_POST['eliminar'];
-        $DirectorController->deleteDirector($ID);
+        $id = $params[1];
+        $DirectorController->deleteDirector($id);
         break;
     
     case "editarpelicula": ////muestra update pelicula
-        $id=$_POST['ID'];
+        $id = $params[1];
         $pelisController-> mostrarUpdate($id);
         break;
         
@@ -64,13 +64,13 @@ switch ($params[0]) {
         $genero= $_POST["genero"];
         $edad = $_POST["edad"];
         $id_director= $_POST["id_director"];
-        $id = $_POST["id"];
+        $id = $params[1];
         $pelisController->updatePelicula($nombre, $descripcion,$genero, $edad,$id_director,$id);
         break;
             
             
     case "editardirector": ////mustra updateDirectores
-        $id=$_POST['ID'];
+        $id = $params[1];
         $directorController-> mostrarUpdate($id);
         break;
 
@@ -80,7 +80,7 @@ switch ($params[0]) {
         $edad= $_POST["edad"];
         $premios = $_POST["premios"];
         $exito= $_POST["mayorExito"];
-        $id = $_POST["id"];
+        $id = $params[1];
         $directorController->updateDirector($director, $apellido,$edad, $premios,$exitos,$id);
     break;
 
