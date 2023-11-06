@@ -37,16 +37,16 @@ class DirectorController{
         }
     
     
-        function updateDirector($nombre, $descripcion, $genero, $clasificacion_edad, $ID_director, $id){
+        function updateDirector($director, $apellido, $edad, $premios, $matorextito, $id){
     
-        if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)&&!empty($ID_director)){
-            $this-> model -> update($nombre, $descripcion, $genero, $clasificacion_edad,0, $ID_director, $id);
+        if(!empty($apellido) && !empty($director) && !empty($edad) && !empty($premios) && !empty($matorextito)){
+            $this-> model -> update($apellido, $director, $edad, $premios, $matorextito, $id);
             }
         }
     
-        function addDirector($nombre, $descripcion, $genero, $clasificacion_edad, $ID_director, $id){
-            if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)&&!empty($ID_director)){
-                $this-> model -> addDirector($nombre, $descripcion, $genero, $clasificacion_edad,0, $ID_director, $id);
+        function addDirector($apellido, $director, $edad, $premios, $matorextito){
+            if(!empty($director)&&!empty($apellido)&&!empty($edad)&&!empty($premios)&&!empty($matorextito)){
+                $this-> model -> addDirector($apellido, $director, $edad, $premios, $matorextito);
                 }
         }
     

@@ -40,15 +40,15 @@ class directoresModel{
     }
 
 
-    function delete($id){
-        $query = $this->db->prepare('DELETE FROM directores WHERE id =?');
+    function delete($id){//// la clave foranea se esta usando por eso no se puedo borrar pregintar a LEOOOO
+        $query = $this->db->prepare('DELETE FROM directores WHERE id_director =?');
         $query->execute(array($id));
         header("Location: " . BASE_URL. "directores");
     }
 
 
     function update($director, $apellido, $edad, $premios, $mayorexito, $id){
-        $query = $this->db->prepare('UPDATE director SET Director =?, Apellido=?, Edad=?, Premios=?, MayorExito=? WHERE id =?');
+        $query = $this->db->prepare('UPDATE directores SET Director =?, Apellido=?, Edad=?, Premios=?, MayorExito=? WHERE id_director =?');
         $query->execute(array($director, $apellido, $edad, $premios, $mayorexito, $id));
         header("Location: " . BASE_URL. "directores");
     }

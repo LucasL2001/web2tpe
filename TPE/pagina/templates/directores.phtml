@@ -7,12 +7,8 @@
                 <?php foreach($directores as $director){ ?>
                     <li><a href="peliculasDeEstosDirectores/<?=$director->id_director?>"><?= $director->Director ?>, <?= $director->Apellido ?></a></li>
                     <?php if(isset($_SESSION["IS_LOGGED"]) && $_SESSION["IS_LOGGED"] == true){?>
-                    <form action="eliminadirector"  method="POST">
-                        <button type="submit" name="eliminar" >ELIMINAR</button>
-                    </form>
-                    <form action="editarpelicula" method="POST">
-                        <button type="submit" name="ID" >EDITAR</button>
-                    </form>
+                        <a href="eliminadirector/<?=$director->id_director?>">ELIMINAR</a> 
+                        <a href="editardirector/<?=$director->id_director?>">EDITAR</a> 
                 <?php }?>
                 <?php }?>   
                 

@@ -19,6 +19,6 @@ class directoresView{
 
 
     function mostrarUpdate($id){
-        include_once "templates/updateDirector";
+        include_once "templates/updateDirectores.phtml";
     }
 }

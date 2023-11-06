@@ -59,7 +59,7 @@ class pelisModel{
     function delete($id){
         $query = $this->db->prepare('DELETE FROM peliculas WHERE id =?');
         $query->execute(array($id));
-        ////header("Location: " . BASE_URL. "home");
+        header("Location: " . BASE_URL. "home");
     }
 
 

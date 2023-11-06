@@ -27,4 +27,8 @@ class pelisView{
     function mostrarUpdate($id){
         include_once "templates/updatePelicula.phtml";
     }
+
+    function mustraAdd(){
+        include_once "templates/addpelicula.phtml";
+    }
 }

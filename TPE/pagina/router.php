@@ -42,6 +42,21 @@ switch ($params[0]) {
         $id = $params[1];
         $directorController -> conseguirPeliculasConEseDirector($id);
         break;
+
+    case "muestraaddpelicula":
+        $pelisController->mustraAdd();
+        break;
+
+    case "addpelicula":////preeguntar a leo como se puede hacer 
+        ////dice que la clave foranea no existe
+        $nombre = $_POST['nombre'];
+        $descripcion = $_POST['descripcion'];
+        $genero = $_POST['genero'];
+        $clasificacion_edad = $_POST['edad'];
+        $director= "nn";
+        $ID_director= 111;
+        $pelisController -> addPelicula($nombre, $descripcion, $genero, $clasificacion_edad,$director ,$ID_director);
+        break;
     
     case "eliminapelicula":////delete peliculas
         $id = $params[1];
@@ -50,7 +65,7 @@ switch ($params[0]) {
 
     case "eliminadirector":////eliminaDirector
         $id = $params[1];
-        $DirectorController->deleteDirector($id);
+        $directorController->deleteDirector($id);
         break;
     
     case "editarpelicula": ////muestra update pelicula
@@ -64,8 +79,7 @@ switch ($params[0]) {
         $descripcion = $_POST["descripcion"];
         $genero= $_POST["genero"];
         $edad = $_POST["edad"];
-        $id_director= $_POST["id_director"];
-        var_dump($id);
+        $id_director= $params[2];
         $pelisController->updatePelicula($nombre, $descripcion,$genero, $edad,$id_director,$id);
         break;
             
@@ -80,7 +94,7 @@ switch ($params[0]) {
         $apellido = $_POST["apellido"];
         $edad= $_POST["edad"];
         $premios = $_POST["premios"];
-        $exito= $_POST["mayorExito"];
+        $exitos= $_POST["mayorExito"];
         $id = $params[1];
         $directorController->updateDirector($director, $apellido,$edad, $premios,$exitos,$id);
     break;

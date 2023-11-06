@@ -44,15 +44,20 @@ class pelisController{
 
 
     function updatePelicula($nombre, $descripcion, $genero, $clasificacion_edad, $ID_director, $id){
-
-    if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)&&!empty($ID_director)){
+        if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($ID_director)&&!empty($ID_director)){
         $this-> pelisModel -> update($nombre, $descripcion, $genero, $clasificacion_edad,0, $ID_director, $id);
         }
     }
 
-    function addPelicula($nombre, $descripcion, $genero, $clasificacion_edad, $ID_director, $id){
+
+    function mustraAdd(){
+        $this -> pelisView->mustraAdd();
+    }
+
+    function addPelicula($nombre, $descripcion, $genero, $clasificacion_edad,$director ,$ID_director){
         if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)&&!empty($ID_director)){
-            $this-> pelisModel -> addPelicula($nombre, $descripcion, $genero, $clasificacion_edad,0, $ID_director, $id);
+            var_dump($nombre);
+            $this-> pelisModel -> addPelicula($nombre, $descripcion, $genero, $clasificacion_edad,$director, $ID_director);
             }
     }
 
