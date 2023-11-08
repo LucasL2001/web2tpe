@@ -21,4 +21,12 @@ class directoresView{
     function mostrarUpdate($id){
         include_once "templates/updateDirectores.phtml";
     }
+
+    function muestraadddirecotres(){
+        include_once "templates/adddirectores.phtml";
+    }
+
+    function muestraerror($error){
+        include_once "templates/muestraError.phtml";
+    }
 }

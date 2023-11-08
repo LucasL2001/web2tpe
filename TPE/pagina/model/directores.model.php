@@ -32,9 +32,18 @@ class directoresModel{
         return $director;
     }
 
+
+    function inneryoin($id){
+        $querry= $this-> db -> prepare('SELECT * FROM peliculas INNER JOIN directores ON peliculas.id_director = directores.id_director WHERE directores.id_director = ?' );
+        $querry -> execute(array($id));
+        $retornado = $querry -> fetchAll(PDO::FETCH_OBJ);
+
+        return $retornado;
+    }
+
     
     function addDirector($director, $apellido, $edad, $premios, $mayorexito){
-        $sentencia = $this-> db->prepare(" INSERT INTO directores(Director =?, Apellido=?, Edad=?, Premios=?, MayorExito=?) VALUES (?,?,?,?,?) ");
+        $sentencia = $this-> db->prepare(' INSERT INTO directores(Director, Apellido, Edad, Premios, MayorExito) VALUES (?,?,?,?,?) ');
         $sentencia->execute(array($director, $apellido, $edad, $premios, $mayorexito));
         header("Location: " . BASE_URL. "directores");
     }

@@ -47,6 +47,10 @@ switch ($params[0]) {
         $pelisController->mustraAdd();
         break;
 
+    case "muestraadddirectores":
+        $directorController -> muestraadddirecotres();
+        break;
+
     case "addpelicula":////preeguntar a leo como se puede hacer 
         ////dice que la clave foranea no existe
         $nombre = $_POST['nombre'];
@@ -54,8 +58,18 @@ switch ($params[0]) {
         $genero = $_POST['genero'];
         $clasificacion_edad = $_POST['edad'];
         $director= "nn";
-        $ID_director= 111;
+        $ID_director= 1;
         $pelisController -> addPelicula($nombre, $descripcion, $genero, $clasificacion_edad,$director ,$ID_director);
+        break;
+
+    case "adddirectores":
+        $director = $_POST["director"];
+        $apellido = $_POST["apellido"];
+        $edad = $_POST["edad"];
+        $premios = $_POST["premios"];
+        $mayorexito = $_POST["mayorexito"];
+        
+        $directorController ->adddirector($director,$apellido,$edad,$premios,$mayorexito);
         break;
     
     case "eliminapelicula":////delete peliculas

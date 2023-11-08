@@ -23,22 +23,14 @@ class authController{
         $usuario = $_GET['usuario'];
         $contrasenia = $_GET['contrasenia'];
         $usuariologin = $this->model->conseguirUsuarioPorNombreDeUsuario($usuario); 
-        var_dump($usuariologin);
+
         if (isset($usuariologin) && !empty($usuariologin)) {
             if(password_verify($contrasenia, $usuariologin->clave)){            
-                
-
-
                 
                     if (session_status() != PHP_SESSION_ACTIVE) {
                         session_start();
                     }
-                
-            
-                
-                
-                
-                
+
                 $_SESSION["USER_ID"] = $usuariologin->ID;
                 $_SESSION["USER_NAME"] = $usuariologin->Nombre;
                 var_dump($_SESSION["USER_NAME"]);

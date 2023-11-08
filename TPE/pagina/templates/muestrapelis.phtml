@@ -6,10 +6,13 @@
 
     <h2>Lista de peliculas</h2>
     <ul>
+    <?php if(isset($_SESSION["IS_LOGGED"]) && $_SESSION["IS_LOGGED"] == true){?>
         <form action="muestraaddpelicula" method="POST">
-            <button type="submit" href="">AGREGAR</button>
+            <button type="submit" >AGREGAR</button>
         </form>
-        <?php foreach($peliculas as $pelicula){?>
+        <?php 
+        }
+        foreach($peliculas as $pelicula){?>
             <li>
                 <a href="detallesPelicula/<?=$pelicula->ID?>"><?=$pelicula->Nombre?></a> 
                 <?php if(isset($_SESSION["IS_LOGGED"]) && $_SESSION["IS_LOGGED"] == true){?>

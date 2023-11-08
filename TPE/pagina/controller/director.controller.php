@@ -31,9 +31,17 @@ class DirectorController{
 
 
 
+
         //utilizar el helper para el ABM desde aca
         function deleteDirector($ID){
-            $this->model ->delete($ID);
+            $comparativa = $this-> model -> inneryoin($ID);
+            if( empty($comparativa)){
+                $this->model ->delete($ID);
+            }else{
+                $error = "el director esta siendo usado";
+                $this-> view -> muestraerror($error);
+            }
+            
         }
     
     
@@ -44,9 +52,18 @@ class DirectorController{
             }
         }
     
+
+        function muestraadddirecotres(){
+            $this->view->muestraadddirecotres();
+        }
+
+
         function addDirector($apellido, $director, $edad, $premios, $matorextito){
+            
+            
             if(!empty($director)&&!empty($apellido)&&!empty($edad)&&!empty($premios)&&!empty($matorextito)){
-                $this-> model -> addDirector($apellido, $director, $edad, $premios, $matorextito);
+
+                $this-> model -> addDirector($director,$apellido, $edad, $premios, $matorextito);
                 }
         }
     

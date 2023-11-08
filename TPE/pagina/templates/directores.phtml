@@ -2,13 +2,27 @@
 <?php require_once "templates/header.phtml";?>
 
     <nav>
-        <form action="router.php">
             <ul>
-                <?php foreach($directores as $director){ ?>
+
+        <?php if(isset($_SESSION["IS_LOGGED"]) && $_SESSION["IS_LOGGED"] == true){?>
+        
+        <form action="muestraadddirectores" method="POST">
+            <button type="submit" >AGREGAR</button>
+        </form> 
+        <?php
+                }
+                foreach($directores as $director){ ?>
                     <li><a href="peliculasDeEstosDirectores/<?=$director->id_director?>"><?= $director->Director ?>, <?= $director->Apellido ?></a></li>
                     <?php if(isset($_SESSION["IS_LOGGED"]) && $_SESSION["IS_LOGGED"] == true){?>
-                        <a href="eliminadirector/<?=$director->id_director?>">ELIMINAR</a> 
-                        <a href="editardirector/<?=$director->id_director?>">EDITAR</a> 
+
+                    <form action="eliminadirector/<?=$director->id_director ?>">
+                        <button type="submit">ELIMINAR</button>
+                    </form>
+
+                    <form action="editardirector/<?=$director->id_director ?>">
+                        <button type="submit">EDITAR</button>
+                    </form>
+                    
                 <?php }?>
                 <?php }?>   
                 
