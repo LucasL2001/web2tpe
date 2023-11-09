@@ -49,6 +49,9 @@ class pelisModel{
         } 
     } 
 
+
+
+
     function addPelicula($nombre, $descripcion, $genero, $clasificacion_edad, $director, $ID_director){
         $sentencia = $this-> db->prepare(" INSERT INTO `peliculas`(`Nombre`, `Descripcion`, `Genero`, `Clasificacion_edad`, `Director`, `id_director`) VALUES (?,?,?,?,?,?) ");
         $sentencia->execute(array($nombre, $descripcion, $genero, $clasificacion_edad, $director, $ID_director));

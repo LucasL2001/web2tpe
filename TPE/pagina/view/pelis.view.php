@@ -19,16 +19,17 @@ class pelisView{
     function muestrainfopelis($info){
         require 'templates/muestrainfopelis.phtml';
     }
+    
     function muestraDetallesDePelicula($pelicula){
         require 'templates/detallePelicula.phtml';
     }
 
 
-    function mostrarUpdate($id){
+    function mostrarUpdate($peliculas = null, $director){
         include_once "templates/updatePelicula.phtml";
     }
 
-    function mustraAdd(){
+    function mustraAdd($directores){
         include_once "templates/addpelicula.phtml";
     }
 }

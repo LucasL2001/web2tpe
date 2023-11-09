@@ -5,13 +5,19 @@ include_once 'view/pelis.view.php';
 include_once 'helpers/authHelper.php';
 
 
+require_once "model/directores.model.php";
+
+
+
 class pelisController{
     private $auth;
+    private $modelD;
     private $pelisModel;
     private $pelisView;
 
     function __construct()
     {
+        $this -> modelD = new directoresModel();
         $this-> auth= new authHelper();
         $this->pelisModel = new pelisModel();
         $this->pelisView = new pelisView();
@@ -43,27 +49,32 @@ class pelisController{
     }
 
 
-    function updatePelicula($nombre, $descripcion, $genero, $clasificacion_edad, $ID_director, $id){
-        if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($ID_director)&&!empty($ID_director)){
-        $this-> pelisModel -> update($nombre, $descripcion, $genero, $clasificacion_edad,0, $ID_director, $id);
+    function updatePelicula($nombre, $descripcion, $genero, $clasificacion_edad, $director, $id){
+        
+        if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)){
+            $this-> pelisModel -> update($nombre, $descripcion, $genero, $clasificacion_edad,0, $director, $id);
+            
         }
     }
 
 
     function mustraAdd(){
-        $this -> pelisView->mustraAdd();
+        $directores= $this->modelD->getDirectores();
+        $this -> pelisView->mustraAdd($directores);
     }
 
     function addPelicula($nombre, $descripcion, $genero, $clasificacion_edad,$director ,$ID_director){
+
         if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)&&!empty($ID_director)){
-            var_dump($nombre);
             $this-> pelisModel -> addPelicula($nombre, $descripcion, $genero, $clasificacion_edad,$director, $ID_director);
             }
     }
 
 
-    function mostrarUpdate($id){
-        $this->pelisView-> mostrarUpdate($id);
+    function mostrarUpdate($id){////mostrar prodcuto
+        $director= $this->modelD->getDirectores();
+        $pelicula=$this->pelisModel->conseguirUnaPelicula($id);
+        $this->pelisView-> mostrarUpdate($pelicula, $director);
     }
 
 }

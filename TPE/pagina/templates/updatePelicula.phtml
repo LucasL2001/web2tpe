@@ -2,10 +2,19 @@
 require_once "templates/head.phtml";
 require_once 'templates/header.phtml';
 ?>
-<form action="updatePelicula/<?= $id ?>/<?= $id_director?>" method="POST">
-    <input type="text" name="nombre" placeholder="nombre nuevo">
-    <input type="text" name="descripcion" placeholder="descripcion nuevo">
-    <input type="text" name="genero" placeholder="genero nuevo">
-    <input type="number" name="edad" placeholder="clasificacion de edad nueva">
+
+
+<form action="updatePelicula/<?= $peliculas->ID ?>" method="POST">
+    <input type="text" name="nombre" placeholder="nombre nuevo" value="<?= $peliculas->Nombre ?>" class="form-control">
+    <input type="text" name="descripcion" placeholder="descripcion nuevo" value = "<?= $peliculas->Descripcion?>" class="form-control">
+    <input type="text" name="genero" placeholder="genero nuevo" value="<?= $peliculas->Genero?>" class="form-control">
+    <input type="number" name="edad" placeholder="clasificacion de edad nueva" value="<?= $peliculas->Clasificacion_edad?>" class="form-control">
+    
+    <select name="direcotires" >
+        <?php foreach ($director as $d) {?>
+        <option value="<?= $d->id_director?>"><?= $d->Director?></option>
+        <?php }?>
+    </select>
+    
     <button type="submit" >ADD</button>
 </form>

@@ -17,7 +17,12 @@ class directoresModel{
     catch ( PDOException $e ) {
         var_dump("ERROR!");
         var_dump( $e );
-    } 
+    }
+    
+    
+
+
+
     
     }
     function conseguirPeliculasConEseDirectorDb($id){
@@ -60,5 +65,13 @@ class directoresModel{
         $query = $this->db->prepare('UPDATE directores SET Director =?, Apellido=?, Edad=?, Premios=?, MayorExito=? WHERE id_director =?');
         $query->execute(array($director, $apellido, $edad, $premios, $mayorexito, $id));
         header("Location: " . BASE_URL. "directores");
+    }
+
+
+
+    function getDirectorPorNombre($director){
+        $sentencia = $this->db->prepare('SELECT * FROM directores WHERE id_director = ?');
+        $sentencia -> execute(array($director));
+        $director = $sentencia->fetchAll(PDO::FETCH_OBJ);
     }
 }
