@@ -54,6 +54,9 @@ class pelisController{
         if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)){
             $this-> pelisModel -> update($nombre, $descripcion, $genero, $clasificacion_edad,0, $director, $id);
             
+        }else{
+            $error = "alguno de los valores no esta cargado";
+            $this-> pelisView -> muestraerror($error);
         }
     }
 
@@ -67,6 +70,9 @@ class pelisController{
 
         if(!empty($nombre)&&!empty($descripcion)&&!empty($genero)&&!empty($clasificacion_edad)&&!empty($director)&&!empty($ID_director)){
             $this-> pelisModel -> addPelicula($nombre, $descripcion, $genero, $clasificacion_edad,$director, $ID_director);
+            }else{
+                $error = "alguno de los valores no esta cargado";
+                $this-> pelisView -> muestraerror($error);
             }
     }
 

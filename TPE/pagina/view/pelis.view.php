@@ -32,4 +32,8 @@ class pelisView{
     function mustraAdd($directores){
         include_once "templates/addpelicula.phtml";
     }
+
+    function muestraerror($error){
+        include_once "templates/muestraError.phtml";
+    }
 }

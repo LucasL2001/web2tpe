@@ -49,6 +49,9 @@ class DirectorController{
     
         if(!empty($apellido) && !empty($director) && !empty($edad) && !empty($premios) && !empty($matorextito)){
             $this-> model -> update($apellido, $director, $edad, $premios, $matorextito, $id);
+            }else{
+                $error = "alguno de los valores no esta cargado";
+                $this-> view -> muestraerror($error);
             }
         }
     
@@ -64,6 +67,9 @@ class DirectorController{
             if(!empty($director)&&!empty($apellido)&&!empty($edad)&&!empty($premios)&&!empty($matorextito)){
 
                 $this-> model -> addDirector($director,$apellido, $edad, $premios, $matorextito);
+                }else{
+                    $error = "alguno de los valores no esta cargado";
+                    $this-> view -> muestraerror($error);
                 }
         }
     
